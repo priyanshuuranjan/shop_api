@@ -3,7 +3,10 @@ const app = express();
 
 const cors = require("cors");
 const PORT = process.env.PORT || 3000;
-app.use(express.static('public'));
+
+// Serve static files from the 'images' folder
+app.use(express.static('images'));
+
 app.use(cors());
 
 // Update the path to data.json to point to the "src" folder
