@@ -5,7 +5,7 @@ const cors = require("cors");
 const PORT = process.env.PORT || 3000;
 
 // Serve static files from the 'images' folder
-app.use(express.static('images'));
+app.use(express.static('image'));
 
 app.use(cors());
 
