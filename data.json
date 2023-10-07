@@ -10,7 +10,7 @@
     "featured": true
   },
   {
-    "id": "seeds",
+    "id": "Fertilizer2",
     "name": "Vegetable seeds",
     "company": "syngenta",
     "price": 600,
@@ -21,7 +21,7 @@
   },
   {
     "id": "Fertilizer3",
-    "name": "pesticide",
+    "name": "urea",
     "company": "fmc",
     "price": 400,
     "image": "/images/urea.jpg",
@@ -30,7 +30,7 @@
     "featured": true
   },
   {
-    "id": "Fertilizer3",
+    "id": "Fertilizer4",
     "name": "pesticide",
     "company": "fmc",
     "price": 400,
