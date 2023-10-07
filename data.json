@@ -1,7 +1,7 @@
 [
     {
         "id": "Fertilizer1",
-        "name": "iphone x",
+        "name": "fertilizer",
         "company": "apple",
         "price": 6000000,
         "image": "images/plantcare.jpg", 
