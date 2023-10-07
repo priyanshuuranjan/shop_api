@@ -10,7 +10,7 @@
     "featured": true
   },
   {
-    "id": "Fertilizer2",
+    "id": "Seeds",
     "name": "Vegetable Seeds",
     "company": "syngenta",
     "price": 600,
@@ -20,7 +20,7 @@
     "featured": true
   },
   {
-    "id": "Fertilizer3",
+    "id": "Pesticide",
     "name": "pesticide",
     "company": "fmc",
     "price": 400,
