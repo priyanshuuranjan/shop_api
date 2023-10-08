@@ -40,6 +40,7 @@ const PORT = process.env.PORT || 3000;
 
 // Serve static files from the 'images' folder
 app.use(express.static('images'));
+
 app.use(cors());
 
 // Middleware for logging request URLs
@@ -48,21 +49,26 @@ app.use((req, res, next) => {
   next();
 });
 
-// Update the path to data.json to point to the "src" folder
-// const apiData = require("../data.json");
-const apiData = require("./data.json")
+// Update the path to data.json to point to the correct location
+const apiData = require("./data.json");
 
 app.get("/", (req, res) => {
   res.send("hello");
 });
 
+// Route to get all products
 app.get("/products", (req, res) => {
-  res.send(apiData);
+  res.json(apiData);
 });
 
-// Route to get a specific product by ID using a parameter in the URL
-app.get("/products?id=id", (req, res) => {
-  const productId = req.params.id;
+// Route to get a specific product by ID using query parameter
+app.get("/product", (req, res) => {
+  const productId = req.query.id;
+  if (!productId) {
+    res.status(400).json({ error: 'Product ID is missing' });
+    return;
+  }
+  
   const product = apiData.find(p => p.id === productId);
 
   if (product) {
@@ -74,6 +80,5 @@ app.get("/products?id=id", (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log("I'm live");
   console.log(`Server is running on port ${PORT}`);
 });
