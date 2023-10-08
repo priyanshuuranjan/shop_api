@@ -61,7 +61,7 @@ app.get("/products", (req, res) => {
 });
 
 // Route to get a specific product by ID using a parameter in the URL
-app.get("/products/:id", (req, res) => {
+app.get("/products?id=id", (req, res) => {
   const productId = req.params.id;
   const product = apiData.find(p => p.id === productId);
 
