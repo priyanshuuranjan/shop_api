@@ -33,7 +33,6 @@
 //   console.log(`Server is running on port ${PORT}`);
 // });
 
-
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -57,13 +56,19 @@ app.get("/", (req, res) => {
   res.send("hello");
 });
 
+// Route to get all products
 app.get("/products", (req, res) => {
-    res.json(apiData);
+  res.json(apiData);
 });
 
-// Route to get a specific product by ID
-app.get("/products?id=:id", (req, res) => {
-  const productId = req.params.id;
+// Route to get a specific product by ID using query parameter
+app.get("/products", (req, res) => {
+  const productId = req.query.id;
+  if (!productId) {
+    res.status(400).json({ error: 'Product ID is missing' });
+    return;
+  }
+  
   const product = apiData.find(p => p.id === productId);
 
   if (product) {
@@ -75,9 +80,9 @@ app.get("/products?id=:id", (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log("I'm live");
   console.log(`Server is running on port ${PORT}`);
 });
+
 
 
 
